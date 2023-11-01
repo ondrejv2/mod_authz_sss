@@ -1,0 +1,3 @@
+
+# LoadModule authz_sss_module modules/mod_authz_sss.so
+
