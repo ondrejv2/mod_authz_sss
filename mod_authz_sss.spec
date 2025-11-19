@@ -11,8 +11,8 @@ Version: 1.0.0
 Release: 1%{?dist}
 License: ASL 2.0
 Group: System Environment/Daemons
-URL: 
-Source0: 
+URL: https://github.com/ondrejv2/mod_authz_sss
+Source0: %{name}-%{version}.tar
 BuildRequires: httpd-devel
 BuildRequires: dbus-devel
 BuildRequires: pkgconfig
