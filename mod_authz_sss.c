@@ -50,12 +50,12 @@ APR_DECLARE_OPTIONAL_FN(char*, authz_owner_get_file_group, (request_rec *r));
 #define DBUS_SSSD_IFACE "org.freedesktop.sssd.infopipe"
 #define DBUS_SSSD_IFACE_USERS "org.freedesktop.sssd.infopipe.Users"
 #define DBUS_SSSD_GET_USER_GROUPS_METHOD "GetUserGroups"
-#define DBUS_SSSD_GET_USER_ATTR_METHOD "GetUserAttr"
 #define DBUS_SSSD_DEST "org.freedesktop.sssd.infopipe"
 #define DBUS_SSSD_TIMEOUT 5000
 
 
-static DBusMessage * lookup_identity_dbus_message(request_rec * r, DBusConnection * connection, DBusError * error, int timeout, const char * method, apr_hash_t * hash) {
+static DBusMessage * lookup_identity_dbus_message(request_rec * r, DBusConnection * connection, DBusError * error,
+                                                  int timeout, const char * method, apr_hash_t * hash) {
         DBusMessage * message = dbus_message_new_method_call(DBUS_SSSD_DEST,
                 DBUS_SSSD_PATH,
                 DBUS_SSSD_IFACE,
