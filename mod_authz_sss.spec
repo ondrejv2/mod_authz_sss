@@ -12,7 +12,7 @@ Release: 1%{?dist}
 License: Apache-2.0
 Group: System Environment/Daemons
 URL: https://github.com/ondrejv2/mod_authz_sss
-Source0: %{name}-%{version}.tar
+Source0: https://github.com/ondrejv2/mod_authz_sss/releases/download/master/%{name}-%{version}.tar
 BuildRequires: httpd-devel
 BuildRequires: dbus-devel
 BuildRequires: pkgconfig
