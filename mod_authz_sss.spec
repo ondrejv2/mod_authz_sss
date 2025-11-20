@@ -9,13 +9,14 @@ Summary: Apache module to authorize authenticated user based on SSSD groups he i
 Name: mod_authz_sss
 Version: 1.0.0
 Release: 1%{?dist}
-License: ASL 2.0
+License: Apache-2.0
 Group: System Environment/Daemons
 URL: https://github.com/ondrejv2/mod_authz_sss
 Source0: %{name}-%{version}.tar
 BuildRequires: httpd-devel
 BuildRequires: dbus-devel
 BuildRequires: pkgconfig
+BuildRequires: gcc
 Requires: httpd-mmn = %{_httpd_mmn}
 
 # Suppres auto-provides for module DSO per
@@ -53,6 +54,7 @@ install -Dp -m 0644 authz_sss.confx $RPM_BUILD_ROOT%{_httpd_confdir}/authz_sss.c
 
 %files
 %doc README LICENSE
+%license LICENSE
 %if "%{_httpd_modconfdir}" != "%{_httpd_confdir}"
 %config(noreplace) %{_httpd_modconfdir}/55-authz_sss.conf
 %endif
