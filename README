@@ -52,13 +52,23 @@ should build and install the module.
 Limitations
 --------------------
 
-The authenticated user has to be a POSIX user
+The authenticated user has to be a POSIX user. You can possibly also use
+non-POSIX users enabling Application typed SSSD domains - see:
+
+https://pagure.io/SSSD/sssd/issue/3310
+
+but the state of support of this is unknown (does not seem to work):
+
+https://github.com/SSSD/sssd/issues/8218
 
 You need to authenticate using principal that SSSD is able to resolve.
 this is usually in form of "User Principal Name" - especially when the
 SSSD backend is configured to use Active Directory, see bug:
 
-https://bugzilla.redhat.com/show_bug.cgi?id=2236087
+https://issues.redhat.com/browse/RHEL-3697
+
+which is fixed in newer versions of SSSD.
+
 
 License
 -------
